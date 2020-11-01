@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= title
+    form(method='post')
+        | 用户名
+        input(name="user")
+        br
+        | 密码
+        input(name='pwd' type='password')
+        br
+        | 验证码
+        input(name='vcode')
+        br
+        img(name='vcode')
+        br
+        | 身份
+        input(name='RadiobuttonList1' type='radio' id='r1' value='教师' checked)
+        label(for='r1') 教师
+        input(name='RadiobuttonList1' type='radio' id='r2' value='学生')
+        label(for='r2') 学生
+        button 登录

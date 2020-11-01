@@ -24,7 +24,7 @@ let {
 } = JSON.parse(require('fs').readFileSync('zf.json','utf-8'))
 let baseurl = 'https://jwc.gdmec.edu.cn'
 let vcodeurl = 'https://jwc.gdmec.edu.cn/CheckCode.aspx'
-let someurl = 'https://jwc.gdmec.edu.cn/xsxk.aspx?xh=07190505&xm=%B3%C2%CA%E7%E2%F9&gnmkdm=N121205'
+let someurl = 'https://jwc.gdmec.edu.cn/xscj_gc.aspx?xh=07190505&xm=%B3%C2%CA%E7%E2%F9&gnmkdm=N121605'
 let __VIEWSTATE
 let vcode,cookie
 https.get(baseurl,(res)=>{
@@ -110,7 +110,7 @@ function geturl(){
             let buffer = Buffer.concat(chunks)
             let str =iconv.decode(buffer,'gbk')
             let $ = cheerio.load(str)
-            $('#kcmcgrid>tbody>tr>td:nth-child(2)').map(function(el){
+            $('#Datagrid1>tbody>tr>td:nth-child(2)').map(function(el){
                 console.log($(this).text())
             })
         })
